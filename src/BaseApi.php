@@ -2,7 +2,7 @@
 /*
  * ============================================================
  * @package php-binance-api
- * @link https://github.com/jaggedsoft/php-binance-api
+ * @link https://github.com/php-core/php-binance-api
  * ============================================================
  * @copyright 2017-2018
  * @author Jon Eyrick
@@ -10,7 +10,7 @@
  * ============================================================
  * A curl HTTP REST wrapper for the binance currency exchange
  */
-namespace Binance;
+namespace PHPCore\BinanceApi;
 
 use Exception;
 
@@ -21,13 +21,13 @@ if (version_compare(phpversion(), '7.0', '<=')) {
 }
 
 /**
- * Main Binance class
+ * Binance API base class
  *
  * Eg. Usage:
  * require 'vendor/autoload.php';
- * $api = new Binance\\API();
+ * $api = new PHPCore\BinanceApi\BaseApi();
  */
-class API
+class BaseApi
 {
     protected $base = 'https://api.binance.com/api/'; // /< REST endpoint for the currency exchange
     protected $baseTestnet = 'https://testnet.binance.vision/api/'; // /< Testnet REST endpoint for the currency exchange
@@ -111,7 +111,7 @@ class API
                 $this->useTestnet = (bool)$param[2];
                 break;
             default:
-                echo 'Please see valid constructors here: https://github.com/jaggedsoft/php-binance-api/blob/master/examples/constructor.php';
+                echo 'Please see valid constructors here: https://github.com/php-core/php-binance-api/blob/master/examples/constructor.php';
         }
     }
 
@@ -143,14 +143,14 @@ class API
     /**
      * If no paramaters are supplied in the constructor, this function will attempt
      * to load the api_key and api_secret from the users home directory in the file
-     * ~/jaggedsoft/php-binance-api.json
+     * ~/php-core/php-binance-api.json
      *
      * @param $file string file location
      * @return null
      */
     protected function setupApiConfigFromFile(?string $file = null)
     {
-        $file = is_null($file) ? getenv("HOME") . "/.config/jaggedsoft/php-binance-api.json" : $file;
+        $file = is_null($file) ? getenv("HOME") . "/.config/php-core/php-binance-api.json" : $file;
 
         if (empty($this->api_key) === false || empty($this->api_secret) === false) {
             return;
@@ -169,14 +169,14 @@ class API
     /**
      * If no paramaters are supplied in the constructor, this function will attempt
      * to load the acurlopts from the users home directory in the file
-     * ~/jaggedsoft/php-binance-api.json
+     * ~/php-core/php-binance-api.json
      *
      * @param $file string file location
      * @return null
      */
     protected function setupCurlOptsFromFile(?string $file = null)
     {
-        $file = is_null($file) ? getenv("HOME") . "/.config/jaggedsoft/php-binance-api.json" : $file;
+        $file = is_null($file) ? getenv("HOME") . "/.config/php-core/php-binance-api.json" : $file;
 
         if (count($this->curlOpts) > 0) {
             return;
@@ -193,13 +193,13 @@ class API
     /**
      * If no paramaters are supplied in the constructor for the proxy confguration,
      * this function will attempt to load the proxy info from the users home directory
-     * ~/jaggedsoft/php-binance-api.json
+     * ~/php-core/php-binance-api.json
      *
      * @return null
      */
     protected function setupProxyConfigFromFile(?string $file = null)
     {
-        $file = is_null($file) ? getenv("HOME") . "/.config/jaggedsoft/php-binance-api.json" : $file;
+        $file = is_null($file) ? getenv("HOME") . "/.config/php-core/php-binance-api.json" : $file;
 
         if (is_null($this->proxyConf) === false) {
             return;
@@ -886,8 +886,8 @@ class API
      *
      * @link https://binance-docs.github.io/apidocs/spot/en/#withdraw-sapi
      *
-     * @example https://github.com/jaggedsoft/php-binance-api#withdraw   Standard withdraw
-     * @example https://github.com/jaggedsoft/php-binance-api#withdraw-with-addresstag   Withdraw with addressTag for e.g. XRP
+     * @example https://github.com/php-core/php-binance-api#withdraw   Standard withdraw
+     * @example https://github.com/php-core/php-binance-api#withdraw-with-addresstag   Withdraw with addressTag for e.g. XRP
      *
      * @property int $weight 1
      *

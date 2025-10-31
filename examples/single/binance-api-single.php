@@ -1,4 +1,4 @@
-<?php // https://github.com/jaggedsoft/php-binance-api
+<?php // https://github.com/php-core/binance-api
 // Old version intended for use without composer. Supports PHP 5.6
 // This project is no longer maintained by me. I am only maintaining the future branch which requires composer, and the node binance api.
 // Credit for updates goes to David Jones: https://github.com/dxjones

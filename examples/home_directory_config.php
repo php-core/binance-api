@@ -1,17 +1,17 @@
 <?php
 
-require '../php-binance-api.php';
+require '../binance-api.php';
 
 /*
-mkdir -vp ~/.config/jaggedsoft/
-cat >  ~/.config/jaggedsoft/php-binance-api.json << EOF
+mkdir -vp ~/.config/php-core/
+cat >  ~/.config/php-core/binance-api.json << EOF
 {
     "api-key": "<api key>",
     "api-secret": "<secret>"
 }
 */
 
-$api = new Binance\API();
+$api = new PHPCore\BinanceApi\BinanceApi();
 
 $tickers = $api->prices();
 print_r($tickers); // List prices of all symbols

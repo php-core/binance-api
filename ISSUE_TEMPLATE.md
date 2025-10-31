@@ -20,7 +20,7 @@
 **code**
 ```php
 require 'vendor/autoload.php';
-$api = new Binance\API("<api key>","<secret>");
+$api = new PHPCore\BinanceApi\BinanceApi("<api key>","<secret>");
 $ticker = $api->prices();
 print_r($ticker); // List prices of all symbols
 echo "Price of BNB: {$ticker['BNBBTC']} BTC";

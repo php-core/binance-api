@@ -2,5 +2,5 @@
 
 require 'php-binance-api.php';
 
-$api = new Binance\API();
+$api = new PHPCore\BinanceApi\BinanceApi();
 $api->report();

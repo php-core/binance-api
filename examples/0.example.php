@@ -1,6 +1,6 @@
 <?php
 require '../vendor/autoload.php';
-$api = new Binance\API("<api key>","<secret>");
+$api = new PHPCore\BinanceApi\BinanceApi("<api key>","<secret>");
 
 // Get latest price of all symbols
 $tickers = $api->prices();

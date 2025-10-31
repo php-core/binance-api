@@ -4,8 +4,8 @@ require 'php-binance-api.php';
 require 'vendor/autoload.php';
 
 // @see home_directory_config.php
-// use config from ~/.confg/jaggedsoft/php-binance-api.json
-$api = new Binance\API();
+// use config from ~/.confg/php-core/binance-api.json
+$api = new PHPCore\BinanceApi\BinanceApi();
 
 // Get complete realtime chart data via WebSockets
 $api->chart(["BNBBTC"], "15m", function($api, $symbol, $chart) {

@@ -2,9 +2,9 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../php-binance-api.php'; // Adjust path if needed
+require_once __DIR__ . '/../vendor/autoload.php'; // Adjust path if needed
 
-class MockBinanceAPI extends Binance\API
+class MockBinanceAPI extends PHPCore\BinanceApi\BaseApi
 {
     public function curl_exec($handler)
     {

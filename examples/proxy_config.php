@@ -1,6 +1,6 @@
 <?php
 
-require '../php-binance-api.php';
+require '../binance-api.php';
 
 $proxyConf = [
   'proto' => 'http',
@@ -11,8 +11,8 @@ $proxyConf = [
 ];
 
 // @see home_directory_config.php
-// use config from ~/.confg/jaggedsoft/php-binance-api.json
-$api = new Binance\API("","",["useServerTime"=>false],$proxyConf);
+// use config from ~/.confg/php-core/binance-api.json
+$api = new PHPCore\BinanceApi\BinanceApi("","",["useServerTime"=>false],$proxyConf);
 
 $tickers = $api->prices();
 print_r($tickers); // List prices of all symbols

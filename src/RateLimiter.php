@@ -3,7 +3,7 @@
 /*
  * ============================================================
  * @package php-binance-api
- * @link https://github.com/jaggedsoft/php-binance-api
+ * @link https://github.com/php-core/binance-api
  * ============================================================
  * @copyright 2017-20201
  * @author Jon Eyrick
@@ -11,7 +11,7 @@
  * ============================================================
  * A curl HTTP REST wrapper for the binance currency exchange
  */
-namespace Binance;
+namespace PHPCore\BinanceApi;
 
 // PHP version check
 if (version_compare(phpversion(), '7.0', '<=')) {
@@ -24,8 +24,8 @@ if (version_compare(phpversion(), '7.0', '<=')) {
  *
  * Eg. Usage:
  * require 'vendor/autoload.php';
- * $api = new Binance\\API();
- * $api = new Binance\\RateLimiter($api);
+ * $api = new PHPCore\BinanceApi\BaseApi(); // or BinanceApi
+ * $api = new PHPCore\BinanceApi\RateLimiter($api);
  */
 
 class RateLimiter

@@ -1,11 +1,11 @@
 {
-    "name": "jaggedsoft/php-binance-api",
+    "name": "php-core/binance-api",
     "description": "PHP Binance API is an asynchronous PHP library for the Binance API designed to be easy to use.",
     "keywords": ["Binance","cryptocurrency","WebSocket", "trading", "crypto"],
     "license": "MIT",
     "repositories": [ {
             "type": "vcs",
-            "url": "https://github.com/jaggedsoft/php-binance-api"
+            "url": "https://github.com/php-core/binance-api"
     }],
     "require": {
         "php": ">=7.4",
@@ -23,13 +23,14 @@
         "minimum-stability": "stable"
     },
     "autoload": {
-        "classmap": [
-          "php-binance-api.php",
-          "php-binance-api-rate-limiter.php"
-        ]
+        "psr-4": {
+            "PHPCore\\BinanceApi\\": "src/"
+        }
     },
     "scripts": {
         "test": "phpunit tests/BinanceStaticTests.php",
-        "live-tests": "phpunit tests/BinanceLiveTests.php"
+        "live-tests": "phpunit tests/BinanceLiveTests.php",
+        "api-test": "phpunit tests/BinanceApiTest.php",
+        "all-tests": "phpunit tests"
     }
 }

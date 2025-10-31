@@ -1,9 +1,9 @@
 <?php
 
-require '../php-binance-api.php';
+require '../binance-api.php';
 
-// use config from ~/.confg/jaggedsoft/php-binance-api.json
-$api = new Binance\API();
+// use config from ~/.confg/php-core/binance-api.json
+$api = new PHPCore\BinanceApi\BinanceApi();
 
 // Getting 24hr ticker price change statistics for a symbol
 $prevDay = $api->prevDay("BNBBTC");

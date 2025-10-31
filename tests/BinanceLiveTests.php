@@ -1,22 +1,22 @@
 <?php
 
-use Binance\API;
+use PHPCore\BinanceApi\BinanceApi;
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../php-binance-api.php'; // Adjust path if needed
+require_once __DIR__ . '/../vendor/autoload.php'; // Adjust path if needed
 
 
 
 class BinanceLiveTests extends TestCase
 {
-    private Binance\API $spotBinance;
-    private Binance\API $futuresBinance;
+    private BinanceApi $spotBinance;
+    private BinanceApi $futuresBinance;
 
     public function setUp(): void {
-        $this->spotBinance = new API('X4BHNSimXOK6RKs2FcKqExquJtHjMxz5hWqF0BBeVnfa5bKFMk7X0wtkfEz0cPrJ', 'x8gLihunpNq0d46F2q0TWJmeCDahX5LMXSlv3lSFNbMI3rujSOpTDKdhbcmPSf2i');
+        $this->spotBinance = new BinanceApi('X4BHNSimXOK6RKs2FcKqExquJtHjMxz5hWqF0BBeVnfa5bKFMk7X0wtkfEz0cPrJ', 'x8gLihunpNq0d46F2q0TWJmeCDahX5LMXSlv3lSFNbMI3rujSOpTDKdhbcmPSf2i');
         $this->spotBinance->useTestnet = true;
 
-        $this->futuresBinance = new API('227719da8d8499e8d3461587d19f259c0b39c2b462a77c9b748a6119abd74401', 'b14b935f9cfacc5dec829008733c40da0588051f29a44625c34967b45c11d73c');
+        $this->futuresBinance = new BinanceApi('227719da8d8499e8d3461587d19f259c0b39c2b462a77c9b748a6119abd74401', 'b14b935f9cfacc5dec829008733c40da0588051f29a44625c34967b45c11d73c');
         $this->futuresBinance->useTestnet = true;
     }
 
@@ -401,7 +401,7 @@ class BinanceLiveTests extends TestCase
         $this->assertIsNumeric($candle[10]); // Taker buy quote asset volume
     }
 
-    // could throw an error: https://github.com/ccxt/php-binance-api/actions/runs/14491775733/job/40649647274?pr=511
+    // could throw an error: https://github.com/ccxt/binance-api/actions/runs/14491775733/job/40649647274?pr=511
     // public function testSystemStatusSpot()
     // {
     //     $this->spotBinance->useTestnet = false; // set to false for sapi request

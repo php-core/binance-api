@@ -1,7 +1,21 @@
-# composer.lock
+# Composer
+composer.lock
 vendor**
+
+# IDE
 .buildpath
 .project
 .settings/**
+.vscode/**
+.idea/**
 
+# System files
 .DS_Store
+
+# Certificates
+ca.pem
+*.pem
+
+# Environment
+.env
+.env.local

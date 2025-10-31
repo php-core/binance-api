@@ -1,11 +1,11 @@
 <?php
 
-require '../php-binance-api.php';
-require '../php-binance-api-rate-limiter.php';
+require '../binance-api.php';
+require '../binance-api-rate-limiter.php';
 
-// use config from ~/.confg/jaggedsoft/php-binance-api.json
-$api = new Binance\API();
-$api = new Binance\RateLimiter($api);
+// use config from ~/.confg/php-core/binance-api.json
+$api = new PHPCore\BinanceApi\BinanceApi();
+$api = new PHPCore\BinanceApi\RateLimiter($api);
 
 // Get latest price of a symbol
 $price = $api->price("BNBBTC");
