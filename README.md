@@ -66,6 +66,80 @@ while(true) {
 }
 ```
 
+#### Laravel Integration
+This package includes Laravel service provider and facade for seamless integration with Laravel applications.
+
+**Installation**
+The service provider and facade will be automatically registered via package discovery (Laravel 5.5+).
+
+**Configuration**
+Publish the configuration file:
+```bash
+php artisan vendor:publish --tag=binance-config
+```
+
+Add your Binance API credentials to your `.env` file:
+```env
+BINANCE_API_KEY=your_api_key_here
+BINANCE_API_SECRET=your_api_secret_here
+BINANCE_TESTNET=false
+```
+
+**Usage with Facade**
+```php
+use PHPCore\BinanceApi\Laravel\Facades\Binance;
+
+// Get all prices
+$prices = Binance::prices();
+
+// Get account information
+$account = Binance::account();
+
+// Get balances
+$balances = Binance::balances();
+
+// Place a buy order
+$order = Binance::buy("BTCUSDT", 0.001, 50000);
+
+// Get open orders
+$openOrders = Binance::openOrders("BTCUSDT");
+```
+
+**Usage with Dependency Injection**
+```php
+use PHPCore\BinanceApi\BinanceApi;
+
+class TradingController extends Controller
+{
+    protected $binance;
+
+    public function __construct(BinanceApi $binance)
+    {
+        $this->binance = $binance;
+    }
+
+    public function index()
+    {
+        $prices = $this->binance->prices();
+        return view('trading.index', compact('prices'));
+    }
+}
+```
+
+**Manual Registration (Laravel 5.4 and below)**
+If you're using Laravel 5.4 or below, add the service provider to your `config/app.php`:
+```php
+'providers' => [
+    // Other service providers...
+    PHPCore\BinanceApi\Laravel\BinanceApiServiceProvider::class,
+],
+
+'aliases' => [
+    // Other aliases...
+    'Binance' => PHPCore\BinanceApi\Laravel\Facades\Binance::class,
+],
+```
+
 =======
 #### Security - CA Bundles
 If you don't know what a CA bundle is, no action is required.  If you do know and you don't like our auto upate feature.

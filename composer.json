@@ -26,6 +26,19 @@
             "PHPCore\\BinanceApi\\": "src/"
         }
     },
+    "suggest": {
+        "illuminate/support": "Required to use the Laravel service provider and facade (^8.0|^9.0|^10.0|^11.0|^12.0)."
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PHPCore\\BinanceApi\\Laravel\\BinanceApiServiceProvider"
+            ],
+            "aliases": {
+                "Binance": "PHPCore\\BinanceApi\\Laravel\\Facades\\Binance"
+            }
+        }
+    },
     "scripts": {
         "test": "phpunit tests/BinanceStaticTests.php",
         "test-coverage": "phpunit tests/BinanceStaticTests.php --coverage-html coverage/",

@@ -11,6 +11,9 @@
         <testsuite name="Static Tests">
             <file>tests/BinanceStaticTests.php</file>
         </testsuite>
+        <testsuite name="Laravel Integration Tests">
+            <file>tests/LaravelIntegrationTest.php</file>
+        </testsuite>
         <testsuite name="Live Tests">
             <file>tests/BinanceLiveTests.php</file>
         </testsuite>
