@@ -10,13 +10,12 @@
     "require": {
         "php": ">=7.4",
         "ext-curl": "*",
-        "ratchet/pawl": "^0.4.0",
-        "react/socket": "^1.0 || ^0.8 || ^0.7",
-        "ratchet/rfc6455": "^0.3"
+        "ratchet/pawl": "^0.4.3 || ^0.4.0",
+        "react/socket": "^1.16 || ^1.0 || ^0.8 || ^0.7",
+        "ratchet/rfc6455": "^0.4 || ^0.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "^12.0",
-        "codacy/coverage": "dev-master"
+        "phpunit/phpunit": "^12.0"
     },
     "config": {
     	"optimize-autoloader": true,
@@ -29,8 +28,10 @@
     },
     "scripts": {
         "test": "phpunit tests/BinanceStaticTests.php",
+        "test-coverage": "phpunit tests/BinanceStaticTests.php --coverage-html coverage/",
         "live-tests": "phpunit tests/BinanceLiveTests.php",
         "api-test": "phpunit tests/BinanceApiTest.php",
-        "all-tests": "phpunit tests"
+        "all-tests": "phpunit tests",
+        "all-tests-coverage": "phpunit tests --coverage-html coverage/"
     }
 }

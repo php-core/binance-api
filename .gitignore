@@ -12,6 +12,13 @@ vendor**
 # System files
 .DS_Store
 
+# Coverage reports
+coverage/
+
+# PHPUnit
+.phpunit.cache/
+phpunit.xml
+
 # Certificates
 ca.pem
 *.pem

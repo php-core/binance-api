@@ -12,7 +12,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/683459a5a71c4875956cf23078a0c39b)](https://www.codacy.com/app/dmzoneill/binance-api?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=php-core/binance-api&amp;utm_campaign=Badge_Grade)
 -->
 # PHP Binance API
-This project is designed to help you make your own projects that interact with [Binance](https://accounts.binance.com/register?ref=PGDFCE46). You can stream candlestick chart data, market depth, or use other advanced features such as setting stop losses and iceberg orders. This project seeks to have complete API coverage (spot and futures) including WebSockets.
+This project is designed to help you make your own projects that interact with [Binance](https://accounts.binance.com/register?ref=PHPAPI). You can stream candlestick chart data, market depth, or use other advanced features such as setting stop losses and iceberg orders. This project seeks to have complete API coverage (spot and futures) including WebSockets.
 
 #### Installation
 ```
